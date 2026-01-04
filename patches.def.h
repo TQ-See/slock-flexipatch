@@ -139,9 +139,9 @@
  */
 #define UNLOCKSCREEN_PATCH 0
 
-/* This patch adds a command line argument -u that keeps the input locked but do not
- * show the lock screen. The original patch simply combines the unlock screen patch and
- * the DPMS patch. Enable DPMS_PATCH separately if you want DPMS.
+/* This patch adds a -u command line argument that keeps input locked without showing the lock
+ * screen. The original patch simply combines the unlock screen patch and the DPMS patch.
+ * Enable DPMS_PATCH separately if you want DPMS.
  * https://tools.suckless.org/slock/patches/visual-unlock-dpms/
  */
 #define VISUAL_UNLOCK_PATCH 0

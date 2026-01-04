@@ -637,11 +637,15 @@ lockscreen(Display *dpy, struct xrandr *rr, int screen)
 static void
 usage(void)
 {
-	#if MESSAGE_PATCH || COLOR_MESSAGE_PATCH
-	die("usage: slock [-v] [-f] [-m message] [cmd [arg ...]]\n");
-	#else
-	die("usage: slock [-v] [cmd [arg ...]]\n");
-	#endif // MESSAGE_PATCH | COLOR_MESSAGE_PATCH
+	die("usage: slock [-v] "
+	    #if VISUAL_UNLOCK_PATCH
+	    "[-u] "
+	    #endif
+	    #if MESSAGE_PATCH || COLOR_MESSAGE_PATCH
+	    "[-f] [-m message] "
+	    #endif
+	    "[cmd [arg ...]]\n"
+	);
 }
 
 int
